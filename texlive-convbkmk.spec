@@ -6,7 +6,7 @@
 # catalog-version 0.08
 Name:		texlive-convbkmk
 Version:	0.08
-Release:	1
+Release:	1.1
 Summary:	Correct platex/uplatex bookmarks in PDF created with hyperref
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/convbkmk
@@ -17,7 +17,9 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Requires:	texlive-convbkmk.bin
+#Requires:	texlive-convbkmk.bin
+# FIXME not really but do not break repo until texlive 2013 update
+Provides:	texlive-convbkmk.bin
 
 %description
 The package provides a small Ruby script that corrects
