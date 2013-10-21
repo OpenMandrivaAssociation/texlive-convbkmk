@@ -6,7 +6,7 @@
 # catalog-version 0.08
 Name:		texlive-convbkmk
 Version:	0.08
-Release:	1.1
+Release:	2
 Summary:	Correct platex/uplatex bookmarks in PDF created with hyperref
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/convbkmk
@@ -17,9 +17,7 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-#Requires:	texlive-convbkmk.bin
-# FIXME not really but do not break repo until texlive 2013 update
-Provides:	texlive-convbkmk.bin
+Provides:	texlive-convbkmk.bin = %{EVRD}
 
 %description
 The package provides a small Ruby script that corrects
@@ -36,6 +34,7 @@ hyperref.
 
 #-----------------------------------------------------------------------
 %files
+%{_bindir}/convbkmk
 %{_texmfdistdir}/scripts/convbkmk/convbkmk.rb
 %doc %{_texmfdistdir}/doc/support/convbkmk/README
 
@@ -46,5 +45,9 @@ hyperref.
 %build
 
 %install
+mkdir -p %{buildroot}%{_bindir}
+pushd %{buildroot}%{_bindir}
+    ln -sf %{_texmfdistdir}/scripts/convbkmk/convbkmk.rb convbkmk
+popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
