@@ -1,16 +1,16 @@
-# revision 30408
+# revision 33125
 # category Package
 # catalog-ctan /support/convbkmk
-# catalog-date 2013-05-11 15:57:43 +0200
-# catalog-license noinfo
-# catalog-version 0.08
+# catalog-date 2014-03-02 11:29:31 +0100
+# catalog-license other-free
+# catalog-version 0.09
 Name:		texlive-convbkmk
-Version:	0.08
-Release:	7
+Version:	0.09
+Release:	1
 Summary:	Correct platex/uplatex bookmarks in PDF created with hyperref
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/convbkmk
-License:	NOINFO
+License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.doc.tar.xz
 BuildArch:	noarch
