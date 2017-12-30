@@ -5,8 +5,8 @@
 # catalog-license other-free
 # catalog-version 0.09
 Name:		texlive-convbkmk
-Version:	0.09
-Release:	5
+Version:	0.10a
+Release:	1
 Summary:	Correct platex/uplatex bookmarks in PDF created with hyperref
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/convbkmk
