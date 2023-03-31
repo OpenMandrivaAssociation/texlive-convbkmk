@@ -1,6 +1,6 @@
 Name:		texlive-convbkmk
 Version:	49252
-Release:	1
+Release:	2
 Summary:	Correct platex/uplatex bookmarks in PDF created with hyperref
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/convbkmk
