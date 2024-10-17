@@ -3,7 +3,7 @@ Version:	49252
 Release:	2
 Summary:	Correct platex/uplatex bookmarks in PDF created with hyperref
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/support/convbkmk
+URL:		https://www.ctan.org/tex-archive/support/convbkmk
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.doc.r%{version}.tar.xz
