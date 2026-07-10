@@ -1,47 +1,24 @@
-Name:		texlive-convbkmk
-Version:	49252
-Release:	2
+%global tl_name convbkmk
+%global tl_revision 49252
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.30
+Release:	%{tl_revision}.1
 Summary:	Correct platex/uplatex bookmarks in PDF created with hyperref
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/support/convbkmk
-License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.doc.r%{version}.tar.xz
+License:	mit
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/convbkmk.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Provides:	texlive-convbkmk.bin = %{EVRD}
+%texlive_base_requires
+Requires:	texlive(convbkmk.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a small Ruby script that corrects
-bookmarks in PDF files created by platex/uplatex, using
-hyperref.
+The package provides a small Ruby script that corrects bookmarks in PDF
+files created by platex/uplatex, using hyperref.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_bindir}/convbkmk
-%{_texmfdistdir}/scripts/convbkmk
-%doc %{_texmfdistdir}/doc/support/convbkmk
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_bindir}
-pushd %{buildroot}%{_bindir}
-ln -sf %{_texmfdistdir}/scripts/convbkmk/convbkmk.rb convbkmk
-popd
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf-dist %{buildroot}%{_datadir}
