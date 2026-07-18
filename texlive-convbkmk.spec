@@ -1,5 +1,6 @@
 %global tl_name convbkmk
 %global tl_revision 49252
+%global tl_bin_links convbkmk:%{_texmfdistdir}/scripts/convbkmk/convbkmk.rb
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -15,6 +16,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(convbkmk.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 The package provides a small Ruby script that corrects bookmarks in PDF
